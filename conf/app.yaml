@@ -1,0 +1,29 @@
+# 是否以守护进程的方式让程序持续运行
+daemon: true
+# 单进程配置
+single_process:
+  # 只允许启动单个进程
+  enable: true
+  # single_process为true时，此属性才有效。
+  # 保证程序只允许启动单个进程的文件锁的路径
+  lock_path: "/tmp/BasicService.lock"
+# 日志记录相关的配置
+log:
+  # 日志记录等级，可以是以下枚举值：VERBOSE、DEBUG、INFO、WARN、ERROR、FATAL
+  log_level: INFO
+  # 是否启用标准输出
+  enable_stdout: true
+  # 是否启用文件日志
+  enable_file: true
+  # 日志文件路径
+  log_dir: "/home/cai/Workspace/BasicService/log"
+  # 单个日志文件的最大文件大小，单位:MB
+  max_filesize: 10
+  # 日志文件切割的时间间隔，单位:分钟，建议设置为15/30/60/120
+  split_time_minute: 60
+mini_dump:
+  # 是否启用 mini dump 捕获
+  enable: false
+  # crash 的 mini dump 存储路径
+  mini_dump_path: ""
+
